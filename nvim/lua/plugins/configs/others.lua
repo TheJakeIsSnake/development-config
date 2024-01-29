@@ -1,6 +1,5 @@
 local M = {}
 local utils = require "core.utils"
-
 M.blankline = {
   indentLine_enabled = 1,
   filetype_exclude = {
