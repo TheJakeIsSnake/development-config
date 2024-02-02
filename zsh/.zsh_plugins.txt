@@ -1,0 +1,4 @@
+
+antidote bundle zsh-users/zsh-completions
+
+
