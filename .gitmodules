@@ -1,0 +1,3 @@
+[submodule "/home/jfehr/.config/zsh/powerlevel10k"]
+	path = /home/jfehr/.config/zsh/powerlevel10k
+	url = https://gitee.com/romkatv/powerlevel10k.git
