@@ -13,3 +13,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".tmux/tpm"]
+	path = .tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
