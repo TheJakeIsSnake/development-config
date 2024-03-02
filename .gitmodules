@@ -1,0 +1,9 @@
+[submodule ".config/zsh/.antidote"]
+	path = .config/zsh/.antidote
+	url = https://github.com/mattmc3/antidote.git
+[submodule ".config/zsh/powerlevel10k"]
+	path = .config/zsh/powerlevel10k
+	url = https://gitee.com/romkatv/powerlevel10k.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
