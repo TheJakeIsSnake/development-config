@@ -1,9 +1,3 @@
-[submodule "/home/jfehr/.config/zsh/powerlevel10k"]
-	path = /home/jfehr/.config/zsh/powerlevel10k
-	url = https://gitee.com/romkatv/powerlevel10k.git
-[submodule "/home/jfehr/.config/zsh/.antidote"]
-	path = /home/jfehr/.config/zsh/.antidote
-	url = https://github.com/mattmc3/antidote.git
 [submodule ".config/zsh/.antidote"]
 	path = .config/zsh/.antidote
 	url = https://github.com/mattmc3/antidote.git
@@ -12,7 +6,4 @@
 	url = https://gitee.com/romkatv/powerlevel10k.git
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule ".tmux/tpm"]
-	path = .tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
