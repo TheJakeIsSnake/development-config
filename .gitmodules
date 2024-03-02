@@ -4,3 +4,9 @@
 [submodule "/home/jfehr/.config/zsh/.antidote"]
 	path = /home/jfehr/.config/zsh/.antidote
 	url = https://github.com/mattmc3/antidote.git
+[submodule ".config/zsh/.antidote"]
+	path = .config/zsh/.antidote
+	url = https://github.com/mattmc3/antidote.git
+[submodule ".config/zsh/powerlevel10k"]
+	path = .config/zsh/powerlevel10k
+	url = https://gitee.com/romkatv/powerlevel10k.git
