@@ -4,12 +4,12 @@ Add the repository for the latest stable version of neovim:
 
 ```
 sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
-sudo apt install neovim tmux stow -y
+sudo apt install neovim zsh tmux stow -y
 ```
 ### Arch
 
 ```
-sudo pacman -S neovim tmux stow
+sudo pacman -S neovim zsh tmux stow
 ```
 ## Pull Submodules
 
