@@ -25,13 +25,7 @@ Run the following command in this directory to create the symlinks:
 ```
 stow .
 ```
-## Source Tmux Config
-
-Run the following command to ensure that tmux gets the correct Config:
-```
-source ~/.config/tmux/tmux.conf
-```
-
+run the following, and reopen the terminal.
 ```
 chsh /bin/zsh
 ```
