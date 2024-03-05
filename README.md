@@ -31,3 +31,7 @@ Run the following command to ensure that tmux gets the correct Config:
 ```
 source ~/.config/tmux/tmux.conf
 ```
+
+```
+chsh /bin/zsh
+```
