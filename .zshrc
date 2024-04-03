@@ -20,5 +20,9 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
 antidote load
 
+# Aliases
+
+alias dexec="docker exec -it"
+
 eval "$(zoxide init zsh)"
 
