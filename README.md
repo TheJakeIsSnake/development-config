@@ -27,5 +27,5 @@ stow .
 ```
 run the following, and reopen the terminal.
 ```
-chsh /bin/zsh
+chsh -s /bin/zsh
 ```
