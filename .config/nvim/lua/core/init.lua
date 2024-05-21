@@ -113,3 +113,10 @@ local new_cmd = vim.api.nvim_create_user_command
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
+
+--------------------------------------- fold options -------------------------------------
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 99
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
