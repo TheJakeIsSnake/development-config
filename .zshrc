@@ -35,8 +35,8 @@ antidote load
 
 alias dexec="docker exec -it"
 alias ls='ls --color'
-
-eval "$(zoxide init zsh)"
+alias g='git'
+alias G='git'
 
 # Environment Variables
 
@@ -63,4 +63,4 @@ zinit light zsh-users/zsh-autosuggestions
 
 autoload -U compinit && compinit
 
-
+eval "$(zoxide init zsh --cmd cd)"

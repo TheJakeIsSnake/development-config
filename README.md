@@ -19,6 +19,10 @@ Run the following to get the submodules included in this repositry:
 git submodule init
 git submodule update
 ```
+## Other Modules
+```
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+```
 ## Run Stow
 Run the following command in this directory to create the symlinks:
 
