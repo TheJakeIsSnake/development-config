@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile~
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=5000
 HISTDUP=erase
 setopt appendhistory
 setopt sharehistory
@@ -15,19 +15,18 @@ setopt hist_find_no_dups
 setopt autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -v
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+bindkey '^i' history-search-backward
+bindkey '^e' history-search-forward
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/$USER/.zshrc'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ZDOTDIR=~/.config/zsh
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-source ${ZDOTDIR:-~}/powerlevel10k/powerlevel10k.zsh-theme
 source ${ZDOTDIR:-~}/.p10k.zsh
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
 antidote load
 
@@ -56,6 +55,8 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
