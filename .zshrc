@@ -17,7 +17,6 @@ unsetopt beep nomatch
 bindkey -v
 bindkey '^i' history-search-backward
 bindkey '^e' history-search-forward
-
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/$USER/.zshrc'
