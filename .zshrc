@@ -32,9 +32,10 @@ antidote load
 # Aliases
 
 alias dexec="docker exec -it"
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias g='git'
 alias G='git'
+alias fcheckout='git checkout $(git branch | fzf)'
 
 # Environment Variables
 
@@ -64,3 +65,8 @@ zinit light zsh-users/zsh-autosuggestions
 autoload -U compinit && compinit
 
 eval "$(zoxide init zsh --cmd cd)"
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
