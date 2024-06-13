@@ -4,12 +4,14 @@ Add the repository for the latest stable version of neovim:
 
 ```
 sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
-sudo apt install neovim zoxide zsh tmux stow ripgrep fzf -y
+sudo apt install neovim zoxide zsh tmux stow ripgrep fzf unzip g++ -y
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 ```
 ### Arch
 
 ```
-sudo pacman -S neovim zsh zoxide tmux stow ripgrep fzf
+sudo pacman -S neovim zsh zoxide tmux stow ripgrep unzip fzf
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 ```
 ## Pull Submodules
 

@@ -15,8 +15,6 @@ setopt hist_find_no_dups
 setopt autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -v
-bindkey '^i' history-search-backward
-bindkey '^e' history-search-forward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/$USER/.zshrc'
@@ -24,14 +22,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ZDOTDIR=~/.config/zsh
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-source ${ZDOTDIR:-~}/.p10k.zsh
-
-antidote load
 
 # Aliases
 
 alias dexec="docker exec -it"
+alias devexec="dexec development-app-1"
 alias ls='ls --color=auto'
 alias g='git'
 alias G='git'
@@ -41,10 +36,6 @@ alias fcheckout='git checkout $(git branch | fzf)'
 
 GIT_EDITOR=vim
 PATH="$HOME/.local/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ZINIT
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local.share}/zinit/zinit.git"
@@ -56,17 +47,21 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 
 autoload -U compinit && compinit
 
 eval "$(zoxide init zsh --cmd cd)"
 
+# Start in tmux
+
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
 
+
+# Posh
+
+eval "$(oh-my-posh init zsh --config '~/.config/posh/profile.yaml')"
