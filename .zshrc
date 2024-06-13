@@ -26,10 +26,14 @@ ZDOTDIR=~/.config/zsh
 # Aliases
 
 alias dexec="docker exec -it"
+alias dps="docker ps -a"
 alias devexec="dexec development-app-1"
+alias rails="dexec development-app-1 rails"
 alias ls='ls --color=auto'
 alias g='git'
-alias G='git'
+alias gcheckout='git checkout'
+alias gpull='git pull'
+alias greset='git reset --hard'
 alias fcheckout='git checkout $(git branch | fzf)'
 
 # Environment Variables
