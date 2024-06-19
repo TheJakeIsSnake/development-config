@@ -35,3 +35,11 @@ run the following, and reopen the terminal.
 ```
 chsh -s /bin/zsh
 ```
+
+## Git Config Changes
+
+```
+git config --global core.editor vim
+git config --global merge.tool nvimdiff
+git config --global mergetool.keepBackup false
+```

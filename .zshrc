@@ -12,6 +12,10 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
+
+
 setopt autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -v
