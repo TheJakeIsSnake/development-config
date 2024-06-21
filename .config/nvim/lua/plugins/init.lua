@@ -270,6 +270,12 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+
+  -- custom
+  
+  {"tpope/vim-surround"},
+  {"tpope/vim-fugitive", lazy=false},
+  {"epwalsh/obsidian.nvim"},
 }
 
 local config = require("core.utils").load_config()

@@ -44,6 +44,7 @@ alias fcheckout='git checkout $(git branch | fzf)'
 
 GIT_EDITOR=vim
 PATH="$HOME/.local/bin:$PATH"
+COMMIT_PREAMBLE="closes: #$()"
 
 # ZINIT
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local.share}/zinit/zinit.git"
