@@ -14,7 +14,8 @@ setopt hist_find_no_dups
 
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
-
+bindkey '^i' history-search-backward
+bindkey '^e' history-search-forward
 
 setopt autocd extendedglob notify
 unsetopt beep nomatch
