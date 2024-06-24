@@ -59,6 +59,13 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
+  opts = {
+    marksman = {},
+    rubocop = {
+      cmd = {"rubocop"},
+      root_dir = require("lspconfig").util.root_pattern("Gemfile",".git", ".")
+    },
+  },
 }
 
 return M

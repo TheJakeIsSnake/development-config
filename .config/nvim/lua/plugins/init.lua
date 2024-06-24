@@ -272,10 +272,41 @@ local default_plugins = {
   },
 
   -- custom
-  
   {"tpope/vim-surround"},
   {"tpope/vim-fugitive", lazy=false},
-  {"epwalsh/obsidian.nvim"},
+  {"epwalsh/obsidian.nvim",
+    version = "*",
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+      "epwalsh/pomo.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "test",
+          path = "~/notes/vaults/test_notes"
+        },
+        {
+          name = "work",
+          path = "~/notes/vaults/work_notes"
+        },
+      },
+      follow_url_func = function(url)
+        vim.fn.jobstart({"wslview", url})
+      end,
+    },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    "jghauser/follow-md-links.nvim",
+  },
 }
 
 local config = require("core.utils").load_config()
