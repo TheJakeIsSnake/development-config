@@ -1,24 +1,24 @@
-require "core"
+local o = vim.opt
+local g = vim.g
+o.compatible = false
+o.showmatch = true
+o.ignorecase = true
+o.mouse = a
+o.hlsearch = true
+o.incsearch = true
+o.tabstop = 2
+o.softtabstop=2
+o.expandtab = true
+o.shiftwidth = 2
+o.autoindent = true
+o.number = true
+o.wildmode = longest,list
+o.ttyfast = true
+o.swapfile = false
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
-local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
-if custom_init_path then
-  dofile(custom_init_path)
-end
-
-require("core.utils").load_mappings()
-
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
--- bootstrap lazy.nvim!
-if not vim.loop.fs_stat(lazypath) then
-  require("core.bootstrap").gen_chadrc_template()
-  require("core.bootstrap").lazy(lazypath)
-end
-
-dofile(vim.g.base46_cache .. "defaults")
-vim.opt.rtp:prepend(lazypath)
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.g.conceallevel = 1
-require "plugins"
+require("config.lazy")
+require("lazy").setup("plugins")
+require("nvim-tree").setup()
