@@ -68,8 +68,11 @@ eval "$(zoxide init zsh --cmd cd)"
 # Start in tmux
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+  tmux a || tmux
 fi
+
+# asdf setup
+. "$HOME/.asdf/asdf.sh"
 
 
 # Posh
@@ -78,3 +81,16 @@ eval "$(oh-my-posh init zsh --config '~/.config/posh/profile.yaml')"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+source ~/.rvm/scripts/rvm
+
+if ruby -v 2> /dev/null > /dev/null; then
+else
+  rvm install ruby-3.2.3
+  rvm --default ruby-3.2.3
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+

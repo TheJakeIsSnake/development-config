@@ -1,5 +1,6 @@
 
 version: 2
+auto_update: true
 final_space: true
 console_title_template: "{{ .Shell }} in {{ .Folder }}"
 blocks:
