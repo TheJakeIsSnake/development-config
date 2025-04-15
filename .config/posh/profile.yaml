@@ -1,47 +1,47 @@
-
-version: 2
-auto_update: true
-final_space: true
-console_title_template: "{{ .Shell }} in {{ .Folder }}"
-blocks:
-  - type: prompt
-    alignment: left
-    newline: true
-    segments:
-    - type: path
-      style: plain
-      template: '{{ .Path }}'
-    - type: git
-      style: plain
-      foreground: '#A5E68A'
-      template: ' {{.HEAD}}{{if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} <#C75046>{{if gt .Behind 0}}￬{{end}}</><#6CC746>{{if gt .Ahead 0}}￪{{end}}</>'
-      properties:
-        branch_icon: ' '
-        fetch_status: true
-        commit_icon: '@'
-
-  - type: 'rprompt'
-    overflow: hidden
-    segments:
-    - type: executiontime
-      style: plain
-      foreground: '#CCC65E'
-      properties:
-        threshold: 5000
-        
-
-
-  - type: prompt
-    alignment: left
-    newline: true
-    segments: 
-    - type: text
-      foreground_templates:
-        - "{{if gt .Code 0}}red{{end}}"
-      template: ⮞
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
 transient_prompt:
+  template: "⮞ "
   foreground_templates:
+  - "{{if gt .Code 0}}red{{end}}"
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: "{{ .Path }}"
+    type: path
+    style: plain
+  - properties:
+      branch_icon: "\ue725 "
+      cache_duration: none
+      commit_icon: "@"
+      fetch_status: true
+    template: " {{.HEAD}}{{if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} <#C75046>{{if gt .Behind 0}}￬{{end}}</><#6CC746>{{if gt .Ahead 0}}￪{{end}}</>"
+    foreground: "#A5E68A"
+    type: git
+    style: plain
+  newline: true
+- type: rprompt
+  overflow: hidden
+  segments:
+  - properties:
+      cache_duration: none
+      threshold: 5000
+    foreground: "#CCC65E"
+    type: executiontime
+    style: plain
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: ⮞
+    type: text
+    foreground_templates:
     - "{{if gt .Code 0}}red{{end}}"
-  template: '⮞ '
-  
+  newline: true
+version: 3
+final_space: true

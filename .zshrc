@@ -32,14 +32,18 @@ ZDOTDIR=~/.config/zsh
 
 alias dexec="docker exec -it"
 alias dps="docker ps -a"
-alias devexec="dexec development-app-1"
-alias rails="dexec development-app-1 rails"
 alias ls='ls --color=auto'
 alias g='git'
 alias gcheckout='git checkout'
 alias gpull='git pull'
 alias greset='git reset --hard'
 alias fcheckout='git checkout $(git branch | fzf)'
+
+# Mykey Work Aliases
+alias devexec="dexec development-app-1"
+alias rails="dexec development-app-1 rails"
+alias import_db='cd ~/project && pv tmp/$(ls tmp | grep sql | fzf) | mysql -u mykeyproduser -psimple -h 127.0.0.1 -P 3309 mykey_dev'
+alias safe_push='devexec rubocop && devexec brakeman -q && ~/test.sh && git push'
 
 # Environment Variables
 
